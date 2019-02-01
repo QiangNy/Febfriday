@@ -15,7 +15,7 @@ gradle assembleRelease
 #mv ./build/outputs/apk/release/${moduleName}-release-unsigned.apk ./build/outputs/apk/release/${moduleName}-release-unsigned.apk
 
 cp -R /home/user/Android/sign/sign_lib /local/work/Runingo/app/signFile/
-java -Xmx512m -Djava.library.path=${str}/sign_lib -jar ${str}/sign_lib/signapk.jar --min-sdk-version 8 ~/Android/sign/security/platform.x509.pem ~/Android/sign/security/platform.pk8 ${appPath}/build/outputs/apk/release/${moduleName}-release-unsigned.apk  ${appPath}/build/outputs/apk/release/${versionName}.apk
+java -Xmx512m -Djava.library.path=${str}/sign_lib -jar ${str}/sign_lib/signapk.jar --min-sdk-version 8 ${str}/sign_lib/platform.x509.pem ${str}/sign_lib/platform.pk8 ${appPath}/build/outputs/apk/release/${moduleName}-release-unsigned.apk  ${appPath}/build/outputs/apk/release/${versionName}.apk
 rm /local/work/Runingo/app/signFile/sign_lib/ -rf
 
 #remove temp apk
